@@ -1,0 +1,193 @@
+<script>
+
+var gData = "";
+
+function loadMyFields(data){
+	$("#mcFormInfusionsoft").html(data);
+				$("#formURLField1").val($('#mcFormInfusionsoft').find("form").attr("action"));    
+				$("#mcFormInfusionsoft").html(data);	
+				$("#nameField1").empty();
+				$("#emailField1").empty();
+					$('#mcFormInfusionsoft :input').each(function () 
+					{ 
+//						console.log("11"+this.type);
+						if(this.type == "hidden"){
+							//gData += "<input type=\'hidden\' name=\'"+this.name+"\' value=\'"+this.value+"\' ></input>";
+							gData += this.name+":"+this.value+",";
+						}else{
+							console.log(this.name);
+							$("#nameField1").append("<option value='"+this.name+"'>"+this.name+" <\/option>")
+							$("#emailField1").append("<option value='"+this.name+"'>"+this.name+" <\/option>")
+						}
+					
+					});
+}
+    $.ajax({type:'POST',url:'template/dynamicFormOption1.html',dataType:'html',success:function(data){$("#dynamicForms").html(data);}});
+    function dynamicForms(value){
+        if(value==1){
+            $.ajax({type:'POST',url:'template/dynamicFormOption1.html',dataType:'html',success:function(data){$("#dynamicForms").html(data);}});
+        }
+        else if(value==2){
+		$.ajax({type:'POST',url:'template/dynamicFormOption2.php',dataType:'html',success:function(data){            
+            $("#dynamicForms").html(data);
+	            $("#populate").click(function()
+	            {
+		            
+					data = $("#mcFormInfusionsoft").val();
+					
+				loadMyFields(data);
+					
+	            });
+				
+            }});
+
+
+        }
+         else if(value==3){
+            $.ajax({type:'POST',url:'template/dynamicFormOption3.php',dataType:'html',success:function(data){
+            
+            $("#dynamicForms").html(data);
+            
+            function loadData(formlist)
+            {
+	            $("#formsList").html(formlist);
+	            $("#formsList").change(function()
+						{
+							var data1  = "formid="+this.value;
+							console.log("data1 " + data1);
+							$.post('../fetchHTML.php',data1,function(data)
+							{ 
+								$("#mcFormInfusionsoft").html(data);
+								loadMyFields(data)
+							}); 
+						});
+						
+            }
+            
+            function fetchInfusionSoft(apiKey){
+	            data1 = "apikey="+apiKey+"&connection_name=it105";
+						   //start
+            		 $.post('../fetchInfusionsoft.php',data1,function(data)
+	    	        { 
+		    	      loadData(data);
+		    	      $.post('saveinfusionlist.php',"action=update&infusionsoftlist="+$("#formsList").html(),function(mydata)					{
+			    	       console.log("saved"); 
+		    	      });
+		    	      // $("#loading").hide();
+					});
+					//End 
+            }
+            
+            $("#fetchdata").click(function(){
+            
+		           $.post('saveinfusionlist.php',"action=hasinfo",function(mydata)
+		           {
+					   var arrResult = mydata.split("~");
+	            	   fetchInfusionSoft(arrResult[0])
+			  });
+
+
+            });
+             $.post('saveinfusionlist.php',"action=hasinfo",function(mydata){
+             var arrResult = mydata.split("~");
+             console.log("1: "+mydata);
+             console.log("2: "+arrResult[0]);
+             console.log("3: "+arrResult[1]);
+		    	       if(arrResult[1] != ""){
+			    	       console.log("Has List Load it");
+			    	       loadData(arrResult[1]);
+		    	       } else
+		    	       {
+		    	       	console.log("fetching data TODO: ask user to input the infusionsoft ID");
+		    	       //
+		    	       fetchInfusionSoft(arrResult[0])
+			    	       
+					   }
+	        });
+
+
+            
+
+
+
+            }});
+        }
+    }
+</script>
+
+<ul class='nav nav-tabs'>
+    <li class='active'>
+    
+    
+    <a href='#TabFormHTML' data-toggle='tab'>Form HTML</a></li><li><a href='#TabContent' data-toggle='tab'>Content</a></li><li><a href='#TabSubmitButton' data-toggle='tab'>Submit Button</a></li></ul>
+        <div class='tab-content'>
+            <div class='tab-pane active' id='TabFormHTML'>
+
+                    <div class='containerForm'>
+                        <div class='cfHeader'>Integration Type</div>
+                        <div class='cfContent'>
+                            <select class='form-control' id='ddlIntegrationType' onload='dynamicForms(this.value)' onchange='dynamicForms(this.value)'>
+                                <option value='1'>Email Data</option>
+                                <option value='2'>Custom form</option>
+                                <option value='3'>Infusionsoft</option>
+                            </select>
+                        </div>
+                    </div>
+
+                <div id="dynamicForms">
+
+                </div>
+            </div>
+            <div class='tab-pane' id='TabContent'>
+                <div class='containerForm'>
+                        <div class='cfHeader'>Content</div>
+                        <div class='cfContent'>
+                            <textarea name='content' class='txtArea'></textarea><script>var formTitle = $("#formTitle").html();$(".txtArea").html(formTitle);</script>
+                            <script type='text/javascript'>
+                                tinymce.init({height:'290',selector:'.txtArea',mode : "textareas",plugins: ["image","media","link","textcolor"],toolbar: "insertfile | undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | forecolor backcolor"});
+                            </script>
+                        </div>
+                </div>
+                
+                <div class='containerForm'>
+                        <div class='cfHeader'>Privacy Notice</div>
+                        <div class='cfContent'>
+                            <input type="text" class="form-control" placeholder="We value your privacy and would never spam you">
+                        </div>
+                </div>
+                
+                <div class='containerForm'>
+                        <div class='cfHeader'>Name Default Value</div>
+                        <div class='cfContent'>
+                            <input type="text" class="form-control" placeholder="Enter your first name">
+                        </div>
+                </div>
+                
+                <div class='containerForm'>
+                        <div class='cfHeader'>Email Default Value</div>
+                        <div class='cfContent'>
+                            <input id="email" name="email" type="text" class="form-control" placeholder="Enter your email address">
+                        </div>
+                </div>
+            </div>
+
+            <div class='tab-pane' id='TabSubmitButton'>
+                <div class='containerForm'>
+                        <div class='cfHeader'></div>
+                        <div class='cfContent'>
+                            <select class='form-control' id='ddlIntegrationType' onload='dynamicForms(this.value)' onchange='dynamicForms(this.value)'>
+                                <option>Button 1</option>
+                                <option>Button 2</option>
+                                <option>Button 3</option>
+                            </select>
+                        </div>
+                </div>
+                
+                <div class='containerForm'>
+                        <div class='cfHeader'>Text</div>
+                        <div class='cfContent'>
+                            <input id="defaultTextSubmit" type="text" class="form-control" placeholder="Enter Submit Text">
+                        </div>
+                </div>
+            </div>
+        </div>

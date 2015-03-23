@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'HandOfSeanRegular';
+    src: url('handsean.eot');
+    src: url('handsean.eot') format('embedded-opentype'),
+         url('handsean.woff') format('woff'),
+         url('handsean.ttf') format('truetype'),
+         url('handsean.svg#HandOfSeanRegular') format('svg');
+}

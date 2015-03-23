@@ -1,0 +1,320 @@
+
+<style>
+    
+    #TabSubmitButton>div{float:left;margin:2.5%;}
+    .areaButton{width:95%;border:1px dashed #999;min-height:50px;}
+    .containerButton{padding:10px;}
+    .containerButton input{margin:0 auto;}
+    .areaProperties{width:45%;}
+    .areaProperties>div{border-radius:5px;border:1px solid #CCC;overflow:hidden;padding:0;float:left;margin-bottom:10px;margin-top:10px;}
+    .areaProperties>div>div{float:left;}
+    .areaProperties>div>div:first-child{background:#DDD;height:40px;width:337px;padding:10px;color:#666;font-weight:bold;}
+    .areaProperties>div>div:last-child{padding:10px;}
+    .areaProperties>div>div:last-child>div{float:left;margin:5px;}
+</style>
+<script>
+    $.ajax({type:'POST',url:'template/dynamicFormOption1.html',dataType:'html',success:function(data){$("#dynamicForms").html(data);}});
+    function dynamicForms(value){
+        if(value==1){
+            $.ajax({type:'POST',url:'template/dynamicFormOption1.html',dataType:'html',success:function(data){$("#dynamicForms").html(data);}});
+        }
+        else if(value==2){
+            $.ajax({type:'POST',url:'template/dynamicFormOption2.html',dataType:'html',success:function(data){$("#dynamicForms").html(data);}});
+        }
+    }
+    
+    $.ajax({type:'POST',url:'buttons/Button.html',dataType:'html',success:function(data){$(".containerButton").html(data);}});
+    
+    var selector = '.containerButton input';
+    var borderColor='#000';
+    var backgroundHover='';
+    $(document).ready(function(){
+        $('#tbButtonHeight').hide();
+        $('#tbButtonWidth').hide();
+        $('#tbButtonBorderSize').hide();
+        $('#tbButtonBorderRadius').hide();
+        
+        function generateOption(initial, condition, increment){
+           var i=initial;
+           var text=null;
+           while(i<=condition){
+               var value=i+'px';
+               text+="<option value='"+value+"'>"+value+"</option>";
+               i+=increment;
+           }
+           return text+"<option value='others'>Other sizes</option>";
+        }
+        
+        $("#selectButtonHeight").html(generateOption(20, 150,5));
+        $("#selectButtonWidth").html(generateOption(20, 500,10));
+        $("#selectButtonBorderSize").html(generateOption(1, 20,1));
+        $("#selectButtonBorderRadius").html(generateOption(1, 20,1));
+        
+        $('#tbButtonHeight').change(function(){
+            var value=$(this).val();
+            $(selector).height(value);
+        });
+        
+        $('#tbButtonWidth').change(function(){
+            var value=$(this).val();
+            $(selector).width(value);
+        });
+        
+        var styleText='';
+        $('#tbButtonBorderSize').change(function(){
+            var value=$(this).val();
+            styleText+='border:'+value+'px solid #000;';
+            $(selector).attr({
+                style:styleText
+            });
+        });
+        
+        $('#tbButtonBorderRadius').change(function(){
+            var value=$(this).val();
+            styleText+="border-radius:"+value+"px;";
+            $(selector).attr({style:styleText});
+        });
+        
+        
+        $('#colorPicker1').ColorPicker({
+	color: '#0000ff',
+	onShow: function (colpkr) {
+		$(colpkr).fadeIn(500);
+		return false;
+	},
+	onHide: function (colpkr) {
+		$(colpkr).fadeOut(500);
+		return false;
+	},
+	onChange: function (hsb, hex, rgb) {
+		$('#colorPicker1 div').css('backgroundColor', '#' + hex);
+                $(selector).css({
+                    borderColor:'#'+hex
+                });
+                borderColor='#'+hex;
+	}
+        });
+        
+        $('#colorPicker2').ColorPicker({
+	color: '#0000ff',
+	onShow: function (colpkr) {
+		$(colpkr).fadeIn(500);
+		return false;
+	},
+	onHide: function (colpkr) {
+		$(colpkr).fadeOut(500);
+		return false;
+	},
+	onChange: function (hsb, hex, rgb) {
+		$('#colorPicker2 div').css('backgroundColor', '#' + hex);
+                $(selector).css({
+                    backgroundColor:'#'+hex
+                });
+	}
+        });
+        
+        $('#colorPicker3').ColorPicker({
+	color: '#0000ff',
+	onShow: function (colpkr) {
+		$(colpkr).fadeIn(500);
+		return false;
+	},
+	onHide: function (colpkr) {
+		$(colpkr).fadeOut(500);
+		return false;
+	},
+	onChange: function (hsb, hex, rgb) {
+		$('#colorPicker3 div').css('backgroundColor', '#' + hex);
+                $(selector+':hover').css({
+                    backgroundColor:'#'+hex
+                });
+                backgroundHover='#'+hex;
+	}
+        });
+        
+        $(selector).mouseenter(function(){
+            alert();
+        });
+    });
+    
+    function editButtonHeight(value){
+        if(value=='others'){
+            $('#tbButtonHeight').show();
+        }
+        else{
+            $('#tbButtonHeight').hide();
+            $(selector).height(value);
+        }
+    }
+    
+    function editButtonWidth(value){
+        if(value=='others'){
+            $('#tbButtonWidth').show();
+        }
+        else{
+            $('#tbButtonWidth').hide();
+            $(selector).width(value);
+        }
+        
+    }
+    
+    function editButtonBorderSize(value){
+        if(value=='others'){
+            $('#tbButtonBorderSize').show();
+        }
+        else{
+            $('#tbButtonBorderSize').hide();
+            //$(selector).attr({
+            //    style:'border:'+value+' solid #000;'
+            //});
+            
+            $(selector).css({
+                borderWidth:value,
+                borderStyle:'solid',
+                borderColor:borderColor
+            });
+        }
+        
+    }
+    
+    function editButtonBorderRadius(value){
+        if(value=='others'){
+            $('#tbButtonBorderRadius').show();
+        }
+        else{
+            $('#tbButtonBorderRadius').hide();
+            $(selector).attr({
+                style:'border-radius:'+value
+            });
+        }
+        
+    }
+    function getTextValue(obj){
+        return document.getElementById(obj).value;
+    }
+    
+    
+    
+</script>
+
+<ul class='nav nav-tabs' style="margin-left:0;">
+    <li class='active'><a href='#TabFormHTML' data-toggle='tab'>Form HTML</a></li><li><a href='#TabContent' data-toggle='tab'>Content</a></li><li><a href='#TabSubmitButton' data-toggle='tab'>Submit Button</a></li></ul>
+        <div class='tab-content'>
+            <div class='tab-pane active' id='TabFormHTML'>
+
+                    <div class='containerForm'>
+                        <div class='cfHeader'>Integration Type</div>
+                        <div class='cfContent'>
+                            <select class='form-control' id='ddlIntegrationType' onload='dynamicForms(this.value)' onchange='dynamicForms(this.value)'>
+                                <option value='1'>Email Data</option>
+                                <option value='2'>Custom form</option></select>
+                        </div>
+                    </div>
+
+                <div id="dynamicForms">
+
+                </div>
+            </div>
+            <div class='tab-pane' id='TabContent'>
+                <div class='containerForm'>
+                        <div class='cfHeader'>Content</div>
+                        <div class='cfContent'>
+                            <textarea name='content' class='txtArea'></textarea>
+                            <script type='text/javascript'>
+                               // var formTitle = $("#containerFormCaption").html();$(".txtArea").html(formTitle);
+                                tinymce.init({height:'290',selector:'.txtArea',mode : "textareas",plugins: ["image","media","link","textcolor"],toolbar: "insertfile | undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | forecolor backcolor"});
+                            </script>
+                        </div>
+                </div>
+                
+                <div class='containerForm'>
+                        <div class='cfHeader'>Privacy Notice</div>
+                        <div class='cfContent'>
+                            <input type="text" class="form-control" placeholder="We value your privacy and would never spam you">
+                        </div>
+                </div>
+                
+                <div class='containerForm'>
+                        <div class='cfHeader'>Name Default Value</div>
+                        <div class='cfContent'>
+                            <input type="text" class="form-control" placeholder="Enter your first name">
+                        </div>
+                </div>
+                
+                <div class='containerForm'>
+                        <div class='cfHeader'>Email Default Value</div>
+                        <div class='cfContent'>
+                            <input type="text" class="form-control" placeholder="Enter your email address">
+                        </div>
+                </div>
+            </div>
+
+            <div class='tab-pane' id='TabSubmitButton'>
+          
+                <div class="areaButton">
+                    <div class="containerButton"></div>
+                </div>
+                <div class="areaProperties">
+                    <div>
+                        <div>Text</div>
+                        <div>
+                            <div><input type="text" style="width:220px;" class="form-control" id="exampleInputEmail1" placeholder="Button Name"></div>
+                            <div><select class="form-control input-sm"><option>32px</option></select></div>
+                            <div><input type="text" style="width:150px;" class="form-control" id="exampleInputEmail1" placeholder="Theme Default"></div>
+                            <div><input type="text" style="width:100px;" class="form-control" id="exampleInputEmail1" placeholder="#000000"></div>
+                            <div style="width:33px;height:33px;background:#000;"></div>
+                            <div>
+                                <label>
+                                    <input type="checkbox"> <b>Bold</b>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox"> <i>Italic</i>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox"> <u>Underline</u>
+                                </label>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div>
+                        <div>Subtext</div>
+                        <div></div>
+                    </div>
+                    <div>
+                        <div>Shadow</div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="areaProperties">
+                    <div>
+                        <div>Button</div>
+                        <div>
+                            <div>Height:<select class="form-control input-sm" id="selectButtonHeight" onchange="editButtonHeight(this.value)"></select><input type="text" id="tbButtonHeight" class="form-control" style="width:120px;"/></div>
+                            <div>Width:<select class="form-control input-sm" id="selectButtonWidth" onchange="editButtonWidth(this.value)"></select><input type="text" id="tbButtonWidth" class="form-control" style="width:120px;"/></div>
+                            <div>BorderSize:<select class="form-control input-sm" id="selectButtonBorderSize" onchange="editButtonBorderSize(this.value)"></select><input type="text" id="tbButtonBorderSize" class="form-control" style="width:120px;"/></div>
+                          
+                            <div>BorderRadius:<select class="form-control input-sm" id="selectButtonBorderRadius" onchange="editButtonBorderRadius(this.value)"></select><input type="text" id="tbButtonBorderRadius" class="form-control" style="width:120px;"/></div>
+                            <div>BorderColor:<div id="colorPicker1" style='z-index:100;padding:2px;border:1px solid #000;' ><div style='height:30px;background-color:#0000ff;'></div></div></div>
+                            
+                            <div>ButtonColor:<div id="colorPicker2" style='z-index:100;padding:2px;border:1px solid #000;' ><div style='height:30px;background-color:#0000ff;'></div></div></div>
+                            
+                            <div>HoverButtonColor:<div id="colorPicker3" style='z-index:100;padding:2px;border:1px solid #000;' ><div style='height:30px;background-color:#0000ff;'></div></div></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>Drop Shadow</div>
+                        <div></div>
+                    </div>
+                    <div>
+                        <div>Inner Shadow</div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>

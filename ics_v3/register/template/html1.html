@@ -1,0 +1,173 @@
+<script>
+
+function loadTypeData(num)
+{
+
+	if(num == 2)
+	{
+		
+	}
+}
+var gData = "";
+    $.ajax({type:'POST',url:'template/dynamicFormOption1.html',dataType:'html',success:function(data){$("#dynamicForms").html(data);}});
+    function dynamicForms(value){
+        if(value==1){
+            $.ajax({type:'POST',url:'template/dynamicFormOption1.html',dataType:'html',success:function(data){$("#dynamicForms").html(data);}});
+        }
+        else if(value==2){
+		$.ajax({type:'POST',url:'template/dynamicFormOption2.php',dataType:'html',success:function(data){            
+            $("#dynamicForms").html(data);
+			
+            
+	            $("#populate").click(function()
+	            {
+		            
+					data = $("#mcFormInfusionsoft").val();
+	    	   $("#mcFormInfusionsoft").html(data);
+				$("#formURLField").val($('#mcFormInfusionsoft').find("form").attr("action"));    
+				$("#mcFormInfusionsoft").html(data);	
+					$("#nameField").empty();
+				$("#emailField").empty();
+					$('#mcFormInfusionsoft :input').each(function () 
+					{ 
+						console.log("11"+this.type);
+						if(this.type == "hidden"){
+							gData += this.name+":"+this.value+",";
+						}else{
+							$("#nameField").append("<option value='"+this.name+"'>"+this.name+" <\/option>")
+							$("#emailField").append("<option value='"+this.name+"'>"+this.name+" <\/option>")
+						}
+					
+					});
+							
+
+					
+	            });
+				
+            }});
+
+
+        }
+         else if(value==3){
+            $.ajax({type:'POST',url:'template/dynamicFormOption3.php',dataType:'html',success:function(data){
+            
+            $("#dynamicForms").html(data);
+             data1 = "apikey=a3fecf991b9bc4e8308d1df9f93df0d2&connection_name=it105";
+             $.post('../fetchInfusionsoft.php',data1,function(data)
+	    	        { 
+	    	        
+		    	       // $("#loading").hide();
+						$("#formsList").html(data);
+						
+						$("#formsList").change(function()
+						{
+							var data1  = "formid="+this.value;
+							console.log("data1 " + data1);
+							$.post('../fetchHTML.php',data1,function(data)
+							{ 
+							console.log("testse");
+									$("#mcFormInfusionsoft").html(data);
+									console.log("FORM ACTION: "+$('#mcFormInfusionsoft').find("form").attr("action"));
+									$("#formURLField").val($('#mcFormInfusionsoft').find("form").attr("action"));    
+									$("#mcFormInfusionsoft").html(data);	
+									$("#nameField").empty();
+									$("#emailField").empty();
+										$('#mcFormInfusionsoft :input').each(function () 
+										{ 
+											
+											console.log("Rey Type: "+this.type);
+											
+											$("#nameField").append("<option value='"+this.name+"'>"+this.name+" <\/option>")
+											$("#emailField").append("<option value='"+this.name+"'>"+this.name+" <\/option>")
+										//	console.log("-"+this.name);
+										});
+							}); 
+
+						});
+					});
+
+
+
+            }});
+        }
+        
+        loadTypeData(value);
+    }
+</script>
+
+<ul class='nav nav-tabs'>
+    <li class='active'>
+    
+    
+    <a href='#TabFormHTML' data-toggle='tab'>Form HTML</a></li><li><a href='#TabContent' data-toggle='tab'>Content</a></li><li><a href='#TabSubmitButton' data-toggle='tab'>Submit Button</a></li></ul>
+        <div class='tab-content'>
+            <div class='tab-pane active' id='TabFormHTML'>
+
+                    <div class='containerForm'>
+                        <div class='cfHeader'>Integration Type</div>
+                        <div class='cfContent'>
+                            <select class='form-control' id='ddlIntegrationType' onload='dynamicForms(this.value)' onchange='dynamicForms(this.value)'>
+                                <option value='1'>Email Data</option>
+                                <option value='2'>Custom form</option>
+                                <option value='3'>Infusionsoft</option>
+                            </select>
+                        </div>
+                    </div>
+
+                <div id="dynamicForms">
+
+                </div>
+            </div>
+            <div class='tab-pane' id='TabContent'>
+                <div class='containerForm'>
+                        <div class='cfHeader'>Content</div>
+                        <div class='cfContent'>
+                            <textarea name='content' class='txtArea'></textarea>
+                            <script type='text/javascript'>
+                                tinymce.init({height:'290',selector:'.txtArea',mode : "textareas",plugins: ["image","media","link","textcolor"],toolbar: "insertfile | undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | forecolor backcolor"});
+                            </script>
+                        </div>
+                </div>
+                
+                <div class='containerForm'>
+                        <div class='cfHeader'>Privacy Notice</div>
+                        <div class='cfContent'>
+                            <input type="text" class="form-control" placeholder="We value your privacy and would never spam you">
+                        </div>
+                </div>
+                
+                <div class='containerForm'>
+                        <div class='cfHeader'>Name Default Value</div>
+                        <div class='cfContent'>
+                            <input type="text" class="form-control" placeholder="Enter your first name">
+                        </div>
+                </div>
+                
+                <div class='containerForm'>
+                        <div class='cfHeader'>Email Default Value</div>
+                        <div class='cfContent'>
+                            <input id="email" name="email" type="text" class="form-control" placeholder="Enter your email address">
+                        </div>
+                </div>
+            </div>
+
+            <div class='tab-pane' id='TabSubmitButton'>
+                <div class='containerForm'>
+                        <div class='cfHeader'></div>
+                        <div class='cfContent'>
+                            <select class='form-control' id='ddlIntegrationType' onload='dynamicForms(this.value)' onchange='dynamicForms(this.value)'>
+                                <option>Button 1</option>
+                                <option>Button 2</option>
+                                <option>Button 3</option>
+                            </select>
+                        </div>
+                </div>
+                
+                <div class='containerForm'>
+                        <div class='cfHeader'>Text</div>
+                        <div class='cfContent'>
+                            <input id="defaultTextSubmit" type="text" class="form-control" placeholder="Enter Submit Text">
+                        </div>
+                </div>
+            </div>
+        </div>

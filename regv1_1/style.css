@@ -1,0 +1,738 @@
+/*
+ * Theme Name: __CHANGE__ Theme
+ * Theme URI: http://ecreative.com.au/
+ * Author: eCreative PTY LTD
+ * Author URI: http://ecreative.com.au/
+ * Description: The 2013 Theme for __CHANGE__
+ * Version: 1.3
+ * Text Domain: ecreative
+ * Credits: Skeleton V1.2 | Copyright 2011, Dave Gamache (www.getskeleton.com)
+ */
+
+/* #Reset & Basics (Inspired by E. Meyers)
+================================================== */
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline; }
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+	body { line-height: 1; }
+	blockquote, q { quotes: none; }
+	blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+	table { border-collapse: collapse; border-spacing: 0; }
+
+/* #Basic Styles
+================================================== */
+	body {
+		background: #fff;
+		font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		color: #444;
+		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+		-webkit-text-size-adjust: 100%;
+	}
+
+
+/* #Typography
+================================================== */
+	h1, h2, h3, h4, h5, h6 {
+		color: #181818;
+		font-family: "Georgia", "Times New Roman", serif;
+		font-weight: bold; }
+	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
+	h1 { font-size: 46px; line-height: 50px; margin-bottom: 14px;}
+	h2 { font-size: 35px; line-height: 40px; margin-bottom: 10px; }
+	h3 { font-size: 28px; line-height: 34px; margin-bottom: 8px; }
+	h4 { font-size: 21px; line-height: 30px; margin-bottom: 4px; }
+	h5 { font-size: 17px; line-height: 24px; }
+	h6 { font-size: 14px; line-height: 21px; }
+	.subheader { color: #777; }
+
+	p { margin: 0 0 20px 0; line-height: 1.5em; }
+	p img { margin: 0; }
+	p.lead { font-size: 21px; line-height: 27px; color: #777;  }
+
+	em { font-style: italic; }
+	strong { font-weight: bold; }
+	small { font-size: 80%; }
+
+/*	Blockquotes  */
+	blockquote, blockquote p { font-size: 17px; line-height: 24px; color: #777; font-style: italic; }
+	blockquote { margin: 0 0 20px; padding: 9px 20px 0 19px; border-left: 1px solid #ddd; }
+	blockquote cite { display: block; font-size: 12px; color: #555; }
+	blockquote cite:before { content: "\2014 \0020"; }
+	blockquote cite a, blockquote cite a:visited, blockquote cite a:visited { color: #555; }
+
+	hr { border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 10px 0 30px; height: 0; }
+
+
+/* #Links
+================================================== */
+	a, a:visited { color: #034ea2; text-decoration: none; outline: 0; }
+	a:hover, a:focus { color: #000; text-decoration: underline; }
+	p a, p a:visited { line-height: inherit; }
+
+/* #Lists
+================================================== */
+	ul, ol { margin-bottom: 20px; }
+	ol { list-style: decimal; }
+	ol, ul, ul.square, ul.circle, ul.disc { margin-left: 30px; }
+	ul.square { list-style: square outside; }
+	ul.circle { list-style: circle outside; }
+	ul.disc { list-style: disc outside; }
+	nav ul,
+	ul.no-bullets { list-style: none outside; margin-left: 0; }
+	ul ul, ul ol,
+	ol ol, ol ul { margin: 4px 0 5px 30px; font-size: 90%;  }
+	ul ul li, ul ol li,
+	ol ol li, ol ul li { margin-bottom: 6px; }
+	li { line-height: 18px; margin-bottom: 12px; }
+	ul.large li { line-height: 21px; }
+	li p { line-height: 21px; }
+
+/* #Images
+================================================== */
+
+	img, img.scale-with-grid { max-width: 100%; height: auto; }
+	img.no-scale { max-width: none; }
+	/*	Remove if hover effect is not needed */
+	a img { -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; -o-transition: all 0.2s linear;	transition: all 0.2s linear; }
+	a:hover img { filter: alpha(opacity=70); -khtml-opacity: 0.7; -moz-opacity: 0.7; opacity: 0.7; }
+
+/* #Buttons
+================================================== */
+
+	.button,
+	#containerForms>form>button,
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"] {
+		background: #eee; /* Old browsers */
+		background: #eee -moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(0,0,0,.2) 100%); /* FF3.6+ */
+		background: #eee -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.2)), color-stop(100%,rgba(0,0,0,.2))); /* Chrome,Safari4+ */
+		background: #eee -webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Chrome10+,Safari5.1+ */
+		background: #eee -o-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Opera11.10+ */
+		background: #eee -ms-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* IE10+ */
+		background: #eee linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* W3C */
+	  border: 1px solid #aaa;
+	  border-top: 1px solid #ccc;
+	  border-left: 1px solid #ccc;
+	  -moz-border-radius: 3px;
+	  -webkit-border-radius: 3px;
+	  border-radius: 3px;
+	  color: #444;
+	  display: inline-block;
+	  font-size: 11px;
+	  font-weight: bold;
+	  text-decoration: none;
+	  text-shadow: 0 1px rgba(255, 255, 255, .75);
+	  cursor: pointer;
+	  margin-bottom: 20px;
+	  line-height: normal;
+	  padding: 8px 10px;
+	  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+	.button:hover,
+	#containerForms>form>button:hover,
+	input[type="submit"]:hover,
+	input[type="reset"]:hover,
+	input[type="button"]:hover {
+		color: #222;
+		background: #ddd; /* Old browsers */
+		background: #ddd -moz-linear-gradient(top, rgba(255,255,255,.3) 0%, rgba(0,0,0,.3) 100%); /* FF3.6+ */
+		background: #ddd -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.3)), color-stop(100%,rgba(0,0,0,.3))); /* Chrome,Safari4+ */
+		background: #ddd -webkit-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* Chrome10+,Safari5.1+ */
+		background: #ddd -o-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* Opera11.10+ */
+		background: #ddd -ms-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* IE10+ */
+		background: #ddd linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* W3C */
+	  border: 1px solid #888;
+	  border-top: 1px solid #aaa;
+	  border-left: 1px solid #aaa; }
+
+	.button:active,
+	#containerForms>form>button:active,
+	input[type="submit"]:active,
+	input[type="reset"]:active,
+	input[type="button"]:active {
+		border: 1px solid #666;
+		background: #ccc; /* Old browsers */
+		background: #ccc -moz-linear-gradient(top, rgba(255,255,255,.35) 0%, rgba(10,10,10,.4) 100%); /* FF3.6+ */
+		background: #ccc -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.35)), color-stop(100%,rgba(10,10,10,.4))); /* Chrome,Safari4+ */
+		background: #ccc -webkit-linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* Chrome10+,Safari5.1+ */
+		background: #ccc -o-linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* Opera11.10+ */
+		background: #ccc -ms-linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* IE10+ */
+		background: #ccc linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* W3C */ }
+
+	.button.full-width,
+	#containerForms>form>button.full-width,
+	input[type="submit"].full-width,
+	input[type="reset"].full-width,
+	input[type="button"].full-width {
+		width: 100%;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		text-align: center; }
+
+	/* Fix for odd Mozilla border & padding issues */
+	#containerForms>form>button::-moz-focus-inner,
+	input::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
+
+
+/* #Forms
+================================================== */
+
+	form, fieldset { margin-bottom: 20px; }
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	textarea,
+	select {
+		border: 1px solid #ccc;
+		padding: 6px 4px;
+		outline: none;
+		-moz-border-radius: 2px;
+		-webkit-border-radius: 2px;
+		border-radius: 2px;
+		font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		color: #777;
+		margin: 0;
+		width: 210px;
+		max-width: 100%;
+		display: block;
+		margin-bottom: 20px;
+		background: #fff; }
+	select { padding: 0; }
+	input[type="text"]:focus,
+	input[type="password"]:focus,
+	input[type="email"]:focus,
+	textarea:focus {
+		border: 1px solid #aaa;
+ 		color: #444;
+ 		-moz-box-shadow: 0 0 3px rgba(0,0,0,.2);
+		-webkit-box-shadow: 0 0 3px rgba(0,0,0,.2);
+		box-shadow:  0 0 3px rgba(0,0,0,.2); }
+	textarea { min-height: 60px; }
+	label,
+	legend {
+		display: block;
+		font-weight: bold;
+		font-size: 13px;  }
+	select { width: 220px; }
+	input[type="checkbox"] { display: inline; }
+	label span,
+	legend span {
+		font-weight: normal;
+		font-size: 13px;
+		color: #444; }
+	
+	
+/* #Navigation/Menu Styles - Generic
+================================================== */
+
+	.h-nav ul, .h-nav-text ul { margin:0; padding: 0; }
+	.h-nav ul li, .h-nav-social ul li {
+		display: block;
+		float: left;
+		list-style: none;
+		margin-bottom: 0;
+		position: relative;
+	}
+	
+	.h-nav ul li a {
+		display: block;
+		text-decoration: none;
+	}
+	
+	.main-nav ul ul {
+		position: absolute;
+		left: 0;
+		top: 100%;
+		width: 100%;
+		z-index: 100;
+	}
+	
+	.main-nav ul ul ul {
+		margin-left: -1px;
+		left: 100%;
+		top: 0;
+		width: 100%;
+	}
+	
+	.main-nav ul ul, .main-nav ul li:hover ul ul, .main-nav ul ul li:hover ul ul {
+		display: none;
+	}
+	
+	.main-nav ul li:hover ul, .main-nav ul ul li:hover ul, .main-nav ul ul ul li:hover ul {
+		display: block;
+	}
+	
+	.main-nav ul ul li {
+		float: none;
+	}
+	
+	.h-nav-text ul li {
+		display: inline;
+		float: none;
+	}
+	
+	.h-nav-text ul li a {
+		display: inline;
+	}
+	
+	.h-nav-text ul li:after {
+		content: '|';
+	}
+	
+	.h-nav-text ul li:last-child:after {
+		content: '';
+		display: none;
+	}
+	
+	.h-nav-text ul li a:hover {
+		text-decoration: underline;
+	}
+	
+	.sf-sub-indicator { display: none; }
+	
+	#show-nav { display: none; }
+	
+	
+	/* #Navigation/Menu Styles - Center
+================================================== */
+
+
+	.h-nav-text-center {
+		text-align:center;
+	}
+	
+	
+	/***
+	 *
+	 * TODO:
+	 *
+	 * dropdown menu (compatible with superfish)
+	 * mobile version menu
+	 * social-nav version
+	 * jquery megamenu
+	 *
+	 */
+
+/* #Navigation/Menu Styles
+================================================== */
+
+
+
+/* #Base 960 Grid
+================================================== */
+    .container { position: relative; width: 960px; margin: 0 auto; padding: 0; }
+
+
+/* #Site Styles
+================================================== */
+	
+	#header, #footer, #primary, #secondary, #show-nav, #show-nav a {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	
+/* #Page Styles
+================================================== */
+
+body {
+	margin: 0;
+}
+
+#header {
+	background: #f6f7f9;
+	border-bottom: #e0e0e0 solid 2px;
+	margin-bottom: 61px;
+	padding: 53px 0 61px;
+	text-align: center;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#header h2 {
+	color: #363636;
+	font-family: StagBook;
+	font-size: 40px;
+	line-height: 1.2em;
+	margin: 0;
+}
+
+#header h2 span,#header h1 {
+	color: #2697da;
+	display: block;
+	font-family:StagBold ;
+        font-size:6;
+}
+
+.content {
+	font-family:MontserratRegular;
+	font-size: 15px;
+	color: #707070;
+}
+
+.content span {
+	color: #363636;
+}
+
+.list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.list li {
+	//background:url('images/check.png') left no-repeat;
+	font-family:'Times New Roman';
+	font-size: 16px;
+	padding-left: 40px;
+	padding-top: 10px;
+        margin-bottom:-10px;
+}
+.list li img{position:absolute;left:0;width:25px;height:25px;}
+
+.left-area {
+	float: left;
+	width: 354px;
+	max-width: 100%;
+}
+
+.right-area {
+	float: right;
+	height: 315px;
+	margin-bottom: 30px;
+	width: 556px;
+}	
+
+.optin-area {
+	margin-bottom: 22px;
+	text-align: center;
+}
+
+input[type="text"].email {
+	color: #a1a1a1;
+	background:url('images/mail2.png') #f8f8f8 right no-repeat;
+	display: inline-block;
+	font-size: 15px;
+	height: 51px;
+	margin: 0;
+	margin-right: 12px;
+	padding-left: 20px;
+	width: 376px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	border-radius: 10px 10px 10px 10px;
+	-webkit-box-shadow:inset 0 0 10px #ccc;
+   -moz-box-shadow:inset 0 0 10px #ccc;
+    box-shadow:inset 0 0 10px #ccc;
+
+}
+
+.optin-area button {
+	background: #2697da;
+	color: #fff;
+	font-family: MontserratBold;
+	font-size: 20px;
+	height: 66px;
+	margin: 0;
+	width: 278px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	border-radius: 10px 10px 10px 10px;
+}
+
+form {
+	margin: 0;
+}
+
+.caption2 {
+	text-align: center;
+	margin-bottom: 113px;
+}
+
+.caption2 p {
+	display: inline-block;
+}
+
+.copyright.h-nav-text-center {
+	color: #707070;
+	font-family:MontserratRegular;
+	font-size: 13px;
+	margin-bottom: 50px;
+}
+/* #Plugins
+================================================== */
+
+
+/* #Media Queries
+================================================== */
+
+	/* Smaller than standard 960 (devices and browsers) */
+	@media only screen and (max-width: 959px) { /*** ADJUST SIZE of #primary and not #secondary */
+	
+	}
+
+    @media only screen and (min-width: 768px) and (max-width: 959px) {
+        .container	{ width: 768px; }
+         #header h2 { font-size: 35px; }
+        #header {padding: 53px 0 61px; }
+        .right-area { height: 0; margin-bottom: 0; width: 390px; }
+    }
+
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: 767px) {
+		.container { width: 300px; }
+
+		.main-nav {
+			position: relative;
+			z-index: 80;
+		}
+		
+		.main-nav ul {
+			left: 0;
+			position: absolute;
+			top: 100%;
+			width: 100%;
+		}
+		
+		.main-nav ul li {
+			float: none;
+			margin: 0;
+		}
+		
+		.main-nav li a {
+			display: block;
+			float: none;
+		}
+		
+		.main-nav ul ul {
+			z-index: 120;
+		}
+		
+		.main-nav ul ul ul {
+			z-index: 130;
+		}
+		
+		.main-nav ul ul ul ul {
+			z-index: 140;
+		}
+		
+		.main-nav ul ul ul {
+			margin-left: 0;
+			left: 0 !important;
+			top: 100% !important;
+		}
+		
+		.main-nav ul li:hover ul {
+			position: relative;
+		}
+		
+		#show-nav {
+			cursor: pointer;
+			display: block;
+			height: 40px;
+			width: 100%;
+		}
+		
+		#show-nav a {
+			background: url('images/icon_menu.png') left center no-repeat;
+			border: 1px solid #ccc;
+			color: #000;
+			font-size: 14px;
+			height: 40px;
+			line-height: 40px;
+			padding-left: 40px;
+			text-align: left;
+			text-transform: uppercase;
+		}
+		#header {margin-bottom: 15px;}
+		#header h2 { font-size: 27px; }
+		.content {font-size: 13px; margin: 0;}
+		.caption p {margin-bottom: 12px;}
+		.list {padding: 0 0 15px;}
+		.list li {font-size: 13px;margin: 0;}
+		.right-area{ margin-bottom: 10px; height: 100%; width: 100%;}
+		input[type="text"].email {display: block; height: 30px; margin: 0 auto 10px; width: 90%;}
+		.caption2 p {font-size: 11px;}
+		.copyright.h-nav-text-center {font-size: 11px;margin-bottom: 20px;}
+		#header {padding: 30px 0;}
+		.optin-area button {height: 50px; width: 98%; margin-bottom: 10px;}
+		.optin-area {margin-bottom: 0px;}
+		.caption2{margin-bottom:14px;}
+	}
+
+	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+	@media only screen and (min-width: 480px) and (max-width: 767px) {
+		.container { width: 420px; }
+		#header {margin-bottom: 15px;}
+		#header h2 { font-size: 30px;line-height: 1.1em;} 
+		.content {width:100%}
+		.caption p {margin-bottom: 12px;}
+		.list li {margin: 0;padding-top: 15px;}
+        .right-area{ margin-bottom: 10px; height: 100%; width: 100%;}
+        .left-area {display:block; float: none; margin:0 auto 20px;}
+        input[type="text"].email {display: block; height: 30px; margin: 10px auto;}
+        .optin-area {margin-bottom: 10px;}
+        .optin-area button {height: 50px; width: 95%;}
+        .caption2 p {font-size: 13px;}
+        .copyright.h-nav-text-center {font-size: 12px;margin-bottom: 20px;}
+	}
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media only screen and (max-width: 479px) {}
+
+
+
+/* #Misc
+================================================== */
+	.remove-bottom { margin-bottom: 0 !important; }
+	.half-bottom { margin-bottom: 10px !important; }
+	.add-bottom { margin-bottom: 20px !important; }
+	
+	.color-orange { color: #f2710b !important; }
+	.color-red { color: #ff0000 !important; }
+	.color-blue { color: #0068b0 !important; }
+	.color-lightblue { color: #81c4f3 !important; }
+	
+/*	WP */
+	.alignleft, .alignright { margin-bottom: 20px; }
+	.alignleft { float: left; margin-right: 10px; }
+	.alignright { float: right; margin-left: 10px; }
+	.aligncenter { display: block; margin-left: auto; margin-right: auto; text-align: center; }
+
+	embed, iframe, object, video { max-width: 100%; }
+
+/* #Clearing
+================================================== */
+    /* Self Clearing Goodness */
+    .container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+    /* Use clearfix class on parent to clear nested columns,
+    or wrap each row of columns in a <div class="row"> */
+    .clearfix:before,
+    .clearfix:after {
+      content: '\0020';
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0; }
+    .clearfix:after { clear: both; }
+    .clearfix { zoom: 1; }
+
+    .clear {
+      clear: both;
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }
+
+
+/* #Font-Face
+================================================== */
+/* 	This is the proper syntax for an @font-face file
+		Just create a "fonts" folder at the root,
+		copy your FontName into code below and remove
+		comment brackets */
+
+/*	@font-face {
+	    font-family: 'FontName';
+	    src: url('../fonts/FontName.eot');
+	    src: url('../fonts/FontName.eot?iefix') format('eot'),
+	         url('../fonts/FontName.woff') format('woff'),
+	         url('../fonts/FontName.ttf') format('truetype'),
+	         url('../fonts/FontName.svg#webfontZam02nTh') format('svg');
+	    font-weight: normal;
+	    font-style: normal; }
+		
+	@font-face {
+		font-family: "PNC";
+		src: url("fonts/ProximaNovaCond-Regular.otf");
+		font-weight: normal;
+	    font-style: normal;
+	}
+*/
+
+@font-face {
+    font-family: 'StagBook';
+    src: url('fonts/stag-book.eot');
+    src: url('fonts/stag-book.eot') format('embedded-opentype'),
+         url('fonts/stag-book.woff') format('woff'),
+         url('fonts/stag-book.ttf') format('truetype'),
+         url('fonts/stag-book.svg#StagBook') format('svg');
+}
+
+@font-face {
+    font-family: 'StagBold';
+    src: url('fonts/stag-bold.eot');
+    src: url('fonts/stag-bold.eot') format('embedded-opentype'),
+         url('fonts/stag-bold.woff') format('woff'),
+         url('fonts/stag-bold.ttf') format('truetype'),
+         url('fonts/stag-bold.svg#StagBold') format('svg');
+}
+
+@font-face {
+    font-family: 'MontserratRegular';
+    src: url('fonts/montserrat-regular.eot');
+    src: url('fonts/montserrat-regular.eot') format('embedded-opentype'),
+         url('fonts/montserrat-regular.woff') format('woff'),
+         url('fonts/montserrat-regular.ttf') format('truetype'),
+         url('fonts/montserrat-regular.svg#MontserratRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'MontserratBold';
+    src: url('fonts/montserrat-bold.eot');
+    src: url('fonts/montserrat-bold.eot') format('embedded-opentype'),
+         url('fonts/montserrat-bold.woff') format('woff'),
+         url('fonts/montserrat-bold.ttf') format('truetype'),
+         url('fonts/montserrat-bold.svg#MontserratBold') format('svg');
+}
+
+/* #CSS Helpers
+================================================== */
+/*
+OPACITY:
+filter: alpha(opacity=70); -khtml-opacity: 0.7; -moz-opacity: 0.7; opacity: 0.7;
+
+BOX-SIZING:
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+
+BORDER-RADIUS:
+-webkit-border-radius: 0 0 0 0;
+-moz-border-radius: 0 0 0 0;
+border-radius: 0 0 0 0;
+
+BOX-SHADOW:
+-moz-box-shadow: 0 0 0 3px #dbdbdb;
+-webkit-box-shadow: 0 0 0 3px #dbdbdb;
+box-shadow:  0 0 0 3px #dbdbdb;
+
+TRANSITION:
+-webkit-transition: all 0.2s linear;
+-moz-transition: all 0.2s linear;
+-o-transition: all 0.2s linear;
+transition: all 0.2s linear;
+
+GRADIENT:
+background-color: #444444;
+background-image: -webkit-gradient(linear, left top, left bottom, from(#444444), to(#999999));
+background-image: -webkit-linear-gradient(top, #444444, #999999);
+background-image:    -moz-linear-gradient(top, #444444, #999999);
+background-image:      -o-linear-gradient(top, #444444, #999999);
+background-image:         linear-gradient(to bottom, #444444, #999999);
+*/

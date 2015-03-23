@@ -1,0 +1,84 @@
+<script>
+    $.ajax({type:'POST',url:'template/dynamicFormOption1.html',dataType:'html',success:function(data){$("#dynamicForms").html(data);}});
+    function dynamicForms(value){
+        if(value==1){
+            $.ajax({type:'POST',url:'template/dynamicFormOption1.html',dataType:'html',success:function(data){$("#dynamicForms").html(data);}});
+        }
+        else if(value==2){
+            $.ajax({type:'POST',url:'template/dynamicFormOption2.html',dataType:'html',success:function(data){$("#dynamicForms").html(data);}});
+        }
+    }
+</script>
+
+<ul class='nav nav-tabs' style="margin-left:0;">
+    <li class='active'><a href='#TabFormHTML' data-toggle='tab'>Form HTML</a></li><li><a href='#TabContent' data-toggle='tab'>Content</a></li><li><a href='#TabSubmitButton' data-toggle='tab'>Submit Button</a></li></ul>
+        <div class='tab-content'>
+            <div class='tab-pane active' id='TabFormHTML'>
+
+                    <div class='containerForm'>
+                        <div class='cfHeader'>Integration Type</div>
+                        <div class='cfContent'>
+                            <select class='form-control' id='ddlIntegrationType' onload='dynamicForms(this.value)' onchange='dynamicForms(this.value)'>
+                                <option value='1'>Email Data</option>
+                                <option value='2'>Custom form</option></select>
+                        </div>
+                    </div>
+
+                <div id="dynamicForms">
+
+                </div>
+            </div>
+            <div class='tab-pane' id='TabContent'>
+                <div class='containerForm'>
+                        <div class='cfHeader'>Content</div>
+                        <div class='cfContent'>
+                            <textarea name='content' class='txtArea'></textarea>
+                            <script type='text/javascript'>
+                              var formTitle = $("#containerForm .with-border").html();$(".txtArea").html(formTitle);
+                                tinymce.init({height:'290',selector:'.txtArea',mode : "textareas",plugins: ["image","media","link","textcolor"],toolbar: "insertfile | undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | forecolor backcolor"});
+                            </script>
+                        </div>
+                </div>
+                
+                <div class='containerForm'>
+                        <div class='cfHeader'>Privacy Notice</div>
+                        <div class='cfContent'>
+                            <input type="text" class="form-control" placeholder="We value your privacy and would never spam you">
+                        </div>
+                </div>
+                
+                <div class='containerForm'>
+                        <div class='cfHeader'>Name Default Value</div>
+                        <div class='cfContent'>
+                            <input type="text" class="form-control" placeholder="Enter your first name">
+                        </div>
+                </div>
+                
+                <div class='containerForm'>
+                        <div class='cfHeader'>Email Default Value</div>
+                        <div class='cfContent'>
+                            <input type="text" class="form-control" placeholder="Enter your email address">
+                        </div>
+                </div>
+            </div>
+
+            <div class='tab-pane' id='TabSubmitButton'>
+                <div class='containerForm'>
+                        <div class='cfHeader'></div>
+                        <div class='cfContent'>
+                            <select class='form-control' id='ddlIntegrationType' onload='dynamicForms(this.value)' onchange='dynamicForms(this.value)'>
+                                <option>Button 1</option>
+                                <option>Button 2</option>
+                                <option>Button 3</option>
+                            </select>
+                        </div>
+                </div>
+                
+                <div class='containerForm'>
+                        <div class='cfHeader'>Text</div>
+                        <div class='cfContent'>
+                            <input type="text" class="form-control" placeholder="Enter your email address">
+                        </div>
+                </div>
+            </div>
+        </div>

@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'LetterOMatic!Regular';
+    src: url('ltromatic.eot');
+    src: url('ltromatic.eot') format('embedded-opentype'),
+         url('ltromatic.woff') format('woff'),
+         url('ltromatic.ttf') format('truetype'),
+         url('ltromatic.svg#LetterOMatic!Regular') format('svg');
+}

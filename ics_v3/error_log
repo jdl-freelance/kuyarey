@@ -1,0 +1,45 @@
+[19-Jun-2014 03:30:35 America/Denver] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 11
+[19-Jun-2014 03:30:35 America/Denver] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 11
+[19-Jun-2014 03:30:35 America/Denver] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 11
+[19-Jun-2014 03:30:35 America/Denver] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 11
+[19-Jun-2014 03:46:01 America/Denver] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 11
+[19-Jun-2014 03:46:01 America/Denver] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 11
+[19-Jun-2014 03:46:02 America/Denver] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 11
+[19-Jun-2014 03:46:02 America/Denver] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 11
+[25-Jun-2014 01:01:43 America/Denver] PHP Parse error:  syntax error, unexpected T_FOREACH in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 20
+[25-Jun-2014 01:01:43 America/Denver] PHP Parse error:  syntax error, unexpected T_FOREACH in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 20
+[25-Jun-2014 01:01:43 America/Denver] PHP Parse error:  syntax error, unexpected T_FOREACH in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 20
+[25-Jun-2014 01:01:43 America/Denver] PHP Parse error:  syntax error, unexpected T_FOREACH in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 20
+[25-Jun-2014 01:01:46 America/Denver] PHP Parse error:  syntax error, unexpected T_FOREACH in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 20
+[25-Jun-2014 01:01:46 America/Denver] PHP Parse error:  syntax error, unexpected T_FOREACH in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 20
+[25-Jun-2014 01:01:46 America/Denver] PHP Parse error:  syntax error, unexpected T_FOREACH in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 20
+[25-Jun-2014 01:01:47 America/Denver] PHP Parse error:  syntax error, unexpected T_FOREACH in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 20
+[25-Jun-2014 01:19:59 America/Denver] PHP Parse error:  syntax error, unexpected '(', expecting T_VARIABLE or '$' in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 24
+[25-Jun-2014 01:19:59 America/Denver] PHP Parse error:  syntax error, unexpected '(', expecting T_VARIABLE or '$' in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 24
+[25-Jun-2014 01:19:59 America/Denver] PHP Parse error:  syntax error, unexpected '(', expecting T_VARIABLE or '$' in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 24
+[25-Jun-2014 01:19:59 America/Denver] PHP Parse error:  syntax error, unexpected '(', expecting T_VARIABLE or '$' in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 24
+[25-Jun-2014 01:20:03 America/Denver] PHP Parse error:  syntax error, unexpected '(', expecting T_VARIABLE or '$' in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 24
+[25-Jun-2014 01:20:03 America/Denver] PHP Parse error:  syntax error, unexpected '(', expecting T_VARIABLE or '$' in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 24
+[25-Jun-2014 01:20:03 America/Denver] PHP Parse error:  syntax error, unexpected '(', expecting T_VARIABLE or '$' in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 24
+[25-Jun-2014 01:20:04 America/Denver] PHP Parse error:  syntax error, unexpected '(', expecting T_VARIABLE or '$' in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 24
+[25-Jun-2014 01:20:16 America/Denver] PHP Parse error:  syntax error, unexpected '[', expecting T_VARIABLE or '$' in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 25
+[25-Jun-2014 01:20:16 America/Denver] PHP Parse error:  syntax error, unexpected '[', expecting T_VARIABLE or '$' in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 25
+[25-Jun-2014 01:20:16 America/Denver] PHP Parse error:  syntax error, unexpected '[', expecting T_VARIABLE or '$' in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 25
+[25-Jun-2014 01:20:16 America/Denver] PHP Parse error:  syntax error, unexpected '[', expecting T_VARIABLE or '$' in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 25
+[25-Jun-2014 01:24:10 America/Denver] PHP Parse error:  syntax error, unexpected T_ECHO in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 27
+[25-Jun-2014 01:24:10 America/Denver] PHP Parse error:  syntax error, unexpected T_ECHO in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 27
+[25-Jun-2014 01:24:10 America/Denver] PHP Parse error:  syntax error, unexpected T_ECHO in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 27
+[25-Jun-2014 01:24:11 America/Denver] PHP Parse error:  syntax error, unexpected T_ECHO in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 27
+[25-Jun-2014 01:45:26 America/Denver] PHP Warning:  mysql_affected_rows() expects parameter 1 to be resource, string given in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 31
+[25-Jun-2014 01:45:26 America/Denver] PHP Warning:  mysql_affected_rows() expects parameter 1 to be resource, string given in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 31
+[25-Jun-2014 01:45:26 America/Denver] PHP Warning:  mysql_affected_rows() expects parameter 1 to be resource, string given in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 31
+[25-Jun-2014 01:45:26 America/Denver] PHP Warning:  mysql_affected_rows() expects parameter 1 to be resource, string given in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 31
+[25-Jun-2014 01:45:26 America/Denver] PHP Warning:  mysql_affected_rows() expects parameter 1 to be resource, string given in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 31
+[25-Jun-2014 01:45:26 America/Denver] PHP Warning:  mysql_affected_rows() expects parameter 1 to be resource, string given in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 31
+[25-Jun-2014 01:49:04 America/Denver] PHP Fatal error:  Call to undefined function mysql_fecth_array() in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 32
+[25-Jun-2014 01:49:21 America/Denver] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 32
+[25-Jun-2014 01:49:21 America/Denver] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 32
+[25-Jun-2014 01:49:21 America/Denver] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 32
+[25-Jun-2014 01:49:21 America/Denver] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 32
+[25-Jun-2014 01:49:21 America/Denver] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 32
+[25-Jun-2014 01:49:21 America/Denver] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/coach/public_html/webinarmagic_v14/ics_v3/process.php on line 32

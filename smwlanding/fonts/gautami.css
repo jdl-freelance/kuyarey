@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'GautamiRegular';
+    src: url('gautami.eot');
+    src: url('gautami.eot') format('embedded-opentype'),
+         url('gautami.woff') format('woff'),
+         url('gautami.ttf') format('truetype'),
+         url('gautami.svg#GautamiRegular') format('svg');
+}

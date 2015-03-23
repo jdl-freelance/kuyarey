@@ -1,0 +1,109 @@
+#containerHeader,#containerImage,#containerImageArrow,#containerForm,#containerServiceTitle,#containerServiceContent,#containerLists,#containerFooter{position:relative;}
+
+#optionContainer{float:right;position:absolute;top:0;right:0;}
+#optionContainer>div{float:left;border-radius:50%;width:10px;height:10px;padding:15px;color:#FFF;margin:2px;border:1px solid #666;background: #999999;display: block;}
+#optionContainer svg{width:18px;height:18px;position:relative;left:-9px;top:-9px;}
+
+
+#lightBoxBG{width:100%;height:100%;background:#000;opacity:.7;position:fixed;top:0;bottom:0;left:0;right:0;display:table;z-index:5;}
+#lightBox{width:100%;height:100%;display:table;top:0;bottom:0;left:0;right:0;position:fixed;z-index:10;}
+
+#lb-1{display:table-cell;vertical-align: middle;}
+#lb-1-1{width:800px;height:0px;background:#FFF;margin:0 auto;box-shadow:0 2px 5px #000;overflow:hidden;border-radius:5px;}
+#lb-1-1-1{height:50px;width:100%;}
+#lb-1-1-1-1{width:750px;height:inherit;float:left;}
+#lb-0{width:30px;height:30px;float:left;padding:10px;}
+#lb-1-1-2{height:400px;overflow-y: scroll;position:relative;padding:5px;}
+#lb-1-1-2>div{padding:10px;}
+#lb-1-1-3{height:80px;width:100%;overflow:hidden;border-bottom:1px solid #000;position:relative;}
+#lb-1-1-3 form{float:right;position:absolute;right:10px;top:10px;}
+#lb-1-1-3 form>input{height:45px;}
+
+
+#2lightBoxBG{width:100%;height:100%;background:#000;opacity:.7;position:fixed;top:0;bottom:0;left:0;right:0;display:table;z-index: 999;z-index: 1004;}
+#2lightBox{width:100%;height:100%;display:table;top:0;bottom:0;left:0;right:0;position:fixed;z-index: 1005;}
+
+#2lb-1{display:table-cell;vertical-align: middle;}
+#2lb-1-1{width:800px;height:0px;background:#FFF;margin:0 auto;box-shadow:0 2px 5px #000;overflow:hidden;border-radius:5px;}
+#2lb-1-1-1{height:50px;width:100%;}
+#2lb-1-1-1-1{width:750px;height:inherit;float:left;}
+#2lb-0{width:30px;height:30px;float:left;padding:10px;}
+#2lb-1-1-2{height:400px;overflow-y: scroll;position:relative;padding:5px;}
+#2lb-1-1-2>div{padding:10px;}
+#2lb-1-1-3{height:70px;width:100%;overflow:hidden;border-bottom:1px solid #000;position:relative;}
+#2lb-1-1-3 form{float:right;position:absolute;right:10px;top:10px;}
+#2lb-1-1-3 form>input{height:45px;}
+
+.gradientBackground1{
+    background: #3D3D3D;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#3D3D3D), to(#000000));
+    background: -webkit-linear-gradient(#3D3D3D, #000000);
+    background: -moz-linear-gradient(#3D3D3D, #000000);
+    background: -ms-linear-gradient(#3D3D3D, #000000);
+    background: -o-linear-gradient(#3D3D3D, #000000);
+    background: linear-gradient(#3D3D3D, #000000);
+}
+.gradientBackground2{
+    background: #424242;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#424242), to(#616161));
+    background: -webkit-linear-gradient(#5a5a5a, #7f7f7f);
+    background: -moz-linear-gradient(#5a5a5a, #7f7f7f);
+    background: -ms-linear-gradient(#5a5a5a, #7f7f7f);
+    background: -o-linear-gradient(#5a5a5a, #7f7f7f);
+    background: linear-gradient(#5a5a5a, #7f7f7f);
+}
+
+
+.parentForm,.containerForm, .containerForm>div{float:left;width:100%;margin-bottom:5px;}
+.containerForm{padding:5px;}
+.cfHeader{border-bottom:1px solid #EEE;font-weight:bold;font-size:12px;padding:5px;margin:5px;}
+
+.cfContent{padding:5px;}
+
+.parentForm>.containerForm:first-child{width:80%;}
+.parentForm>.containerForm:last-child{width:20%;}
+.parentForm>.containerForm:last-child input{height:33px;width:130px;padding:0 10px 0 10px;}
+
+.containerForm .cfHeader> div:first-child{width:80%;float:left;}
+.containerForm .cfHeader> div:last-child{width:20%;float:left;}
+.containerForm .cfContent> input{width:100%;height:33px;padding:10px;}
+
+.bottomCheckBox{float:left;margin-top:-20px;font-weight:lighter; font-size: 11px;padding-left:20px;width:100%;}
+
+.efChild{background:#EEE;padding:20px;min-height:290px;margin:10px 0 10px 0;}
+
+#containerExit{position:relative;}
+#containerExit>div{float:right;position:absolute;right:0}
+
+
+#containerButton input{
+    background: #CCCCCC;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#CCCCCC), to(#BBBBBB));
+    background: -webkit-linear-gradient(#259700, #228b00);
+    background: -moz-linear-gradient(#259700, #228b00);
+    background: -ms-linear-gradient(#259700, #228b00);
+    background: -o-linear-gradient(#259700, #228b00);
+    background: linear-gradient(#259700, #228b00);
+    text-decoration:none;
+    border-radius:5px;
+    border:1px solid #333;
+    width:200px;height:35px;
+    position:relative;margin:3px;
+    color:#FFF;font-weight:bold;font-size:12px;
+}
+#containerButton input:hover{
+    background: #BBBBBB;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#BBBBBB), to(#CCCCCC));
+    background: -webkit-linear-gradient(#228b00, #259700);
+    background: -moz-linear-gradient(#228b00, #259700);
+    background: -ms-linear-gradient(#228b00, #259700);
+    background: -o-linear-gradient(#228b00, #259700);
+    background: linear-gradient(#228b00, #259700);
+}
+//--------------------------------
+
+.profiles div{background:red;}
+
+
+
+//---

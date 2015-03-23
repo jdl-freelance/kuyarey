@@ -1,0 +1,52 @@
+<div class='containerForm'>
+        <div class='cfHeader'>
+            <div>Email Address</div>
+            <div><label class='checkbox'><input type='checkbox'>Open in new window</label></div>
+        </div>
+        <div class='cfContent'>
+            <input type="text" class="form-control" placeholder="Email Address"/>
+        </div>
+</div>
+
+<div class='containerForm'>
+        <div class='cfHeader'>Redirect URL</div>
+        <div class='cfContent'>
+            <input class='input-block-level' type='text' placeholder=''>
+        </div>
+</div>
+<div class="bottomCheckBox">
+        <label class='checkbox'><input type='checkbox'>Disable Name</label>
+</div>
+
+<div class='containerForm'>
+    <div class='cfHeader'>Name Field Order</div>
+    <div class='cfContent'>
+        <input type="text" class="form-control" placeholder="0"/>
+    </div>
+</div>
+<div class="bottomCheckBox">
+        <label class='checkbox'><input type='checkbox'>Name Required</label>
+</div>
+
+<div class='containerForm'>
+    <div class='cfHeader'>Email Field Order</div>
+    <div class='cfContent'>
+        <input type="text" class="form-control" placeholder="0"/>
+    </div>
+</div>
+
+
+<script>
+    $("#extraFields").hide();
+    $("#addExtraFields").click(function(){
+        $.ajax({type:'POST',url:'template/extraFields1.html',dataType:'html',success:function(data){$("#extraFields").append(data);}});
+        $("#extraFields").show();
+    });
+</script>
+<div class="containerForm">
+    <div class='cfHeader'>Extra Fields</div>
+    <div class='cfContent'>
+        <div id='extraFields'></div>
+        <button id='addExtraFields' type="button" class="btn btn-primary">Add new</button>
+    </div>
+</div>

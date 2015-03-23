@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'BickhamScriptRegular';
+    src: url('bickhamscript.eot');
+    src: url('bickhamscript.eot') format('embedded-opentype'),
+         url('bickhamscript.woff') format('woff'),
+         url('bickhamscript.ttf') format('truetype'),
+         url('bickhamscript.svg#BickhamScriptRegular') format('svg');
+}

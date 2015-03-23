@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'HelveticaLTStdLightCondensed';
+    src: url('helveticaltstd-lightcond.eot');
+    src: url('helveticaltstd-lightcond.eot') format('embedded-opentype'),
+         url('helveticaltstd-lightcond.woff') format('woff'),
+         url('helveticaltstd-lightcond.ttf') format('truetype'),
+         url('helveticaltstd-lightcond.svg#HelveticaLTStdLightCondensed') format('svg');
+}
